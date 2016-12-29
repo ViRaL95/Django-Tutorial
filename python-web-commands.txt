@@ -1,0 +1,114 @@
+In Django you have a main website and you have all these little apps. Each app needs to do one thing, if you cant explain how to do it in one sentence then you need to break it up. 
+
+init.py tells python to treat this like a package
+settings.py is the settings for the website. its like the main hub. 
+urls.py points to the various apps. the apps themselves have their own urls.py files  
+tests.py 
+
+
+Migrations is everytime you add new models you will need to make migrations and migrate. 
+
+200 means that it was a succesfull 
+
+admin.py allows you to basically edit the users for the database. 
+models.py gives you a blue print for your database. 
+python manage.py startapp music 
+views.py just take user requests and gives them back something 
+
+Each app has its own MVC. models.py, views.py, urls.py. Django has a MVC framework set up for you 
+
+In settings.py you add your apps, so we added webapp under Installed Apps
+
+The urls.py file checks whether the url patterns are there and checked whether the url had admin/ or webapp/ if it doesnt it returns a 404
+
+
+Process:
+From urls.py
+It began with webapp/ so it included webapp.urls, opened up urls.py read it, and it returns views.index with the name of index and it returned index which is just an HTTP response 
+
+Templates are useful becuase if you have a nav bar you can edit only one file instead of editing a 100 files. Jinja 
+
+1) python manage.py startapp personal
+2) Install your apps ( go into settings.py and install the app that you just created (personal))
+3) create a link that sends a link to the app, go into urls.py ad just include personal.urls
+4) Now we must create personal.urls, in the personals directory 
+^$ means that we are at a homepage.
+5) The next thing that we must do is create a views.index - ah no. So we create one
+
+Django takes all ur apps and all ur templates loads them all as if they were all stored into a single templates directory. Inside the templates directory we create another directory known as personal
+
+Using extends: 
+{% extends "personal/header.html" %}
+
+
+The following line is a type of jinja and allows you to do the following. I am able to include some block content with an end block have some code within it.
+
+{% extends "personal/header.html" %}
+{% block content %}
+<p> Welcome to my website. Im a programmer </p>
+{% endblock %}
+
+Now inside header.html i can do the following:
+
+<body class="body" style="background-color:#f6f6f6">
+	<div>
+		{% block content %}
+		{% endblock %}
+	</div>
+</body>	
+
+
+Jinja will take whatevers between the block content and endblock and place it in the div
+
+Rather than using extends we can also use includes
+Using includes:
+
+We created an includes directory in our templates/personal directory and within it we include htmlsnippet.html. 
+
+Inside our templates directory we have a home.html
+
+We can create a htmlsnippet file and in it we can do the following:
+
+{% block content %}
+<p> Hey welcome to my website or whatever </p>
+{% endblock %}
+
+In our home.html we can do the following 
+
+{% block content %}
+<p> Welcome to my website. Im a programmer </p>
+{% includes "personal/includes/htmlsnippet.html" %}
+{% endblock %}
+
+Now the htmlsnippet.html files is included and loads 
+
+Extends should be used for larger pieces like headers and footers while includes should be used for smaller snippets of code 
+
+
+when you are creating css, js, and images yu wnat to store them in the static folder. You can see this is the way to do them according to documentation by looking in the settings.py file
+
+We want to fix the contacts page. We dont need our own app for this because it isnt necessarily its own app, its part of the personal app. We need to add stuff into thew views.py and 
+
+In the views.py we want to go ahead and add a render. A render includes the following:
+A request, the link to the HTML file, and an optional dictionary. 
+
+The dictionary is a type of data structure in python which can be defined using the curly braces {}
+
+The following is an example of a dictionary:  {'Jack':[15,'blonde'],'Bob':[22, 'brown'],'Alice':[12,'black'],'Kevin':[17,'red']}
+
+We must also edit the urls.py file, which we do doing the following:
+
+url(r'^contact/$',views.contact,name="contact")
+
+We must also go into the urls.py in the mysite directory because the following line: 
+
+ url(r'^$', include('personal.urls')), 
+
+ cleraly states that the url starts and ends immediately, we must remove the dollar sign in order to allow a /contacts
+
+ Now we must create an app for a blog. In order to do so we must write
+
+ python manage.py startapp blog 
+
+ In order to install the app we must go to mysite/mysite/settings.py
+

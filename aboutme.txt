@@ -1,0 +1,25 @@
+django-admin startproject mysite
+This command creates a project directory with mysite, and a folder named mysite within that folder. This subfolder is where we will be storing the files. 
+
+The init file tells python that it wants to be treated like a package. 
+The settings file are the settings for your website. You use the installed apps when you download a new application you need to add it in there. 
+The Secret Key allows people to dencrypt your website and log into your session, so it is important to never share this 
+
+what test does is that if you have a hundred different things such as login info, shopping cart, a feed etc. it will test to see if everything works properly and will tell you what doesnt when updates come out.
+
+Django is a model view controller. models.py is the model views.py is the viewer and urls.py is the controller 
+
+Urls.py-controls what is served based on url patterns (regular expressions)
+models.py-database structures and metadata
+views.py-handles what the user end "views" or interacts with 
+
+The great thing abot django is that the model view controller comes built in, unlike Flask. 
+
+
+IMPORTANT TO NOTE: Because we added webapp, we must go to settings.py located in "mysite" and add webapp onto installed apps 
+
+wjen you go into urls.py in mysite it is important to note that the ^ denotes the beginning of a website and th dollar sign denotes the end of a website. 
+
+if you go into mysite/mysite and you open the urls.py this is the main ub and it sees if it has the admin or webapp. The url began with webapp/. It saw that it needed to include webapp.url, opened it up and it saw that it begins and it ends. It then goes to views.py and returns an HTTP response.
+
+The reason why there are multiple urls.py or controllers is because it allows you to use multiple links to go to the same page, all tht needs to be done is to go into settings.py and "install" the new .py file
