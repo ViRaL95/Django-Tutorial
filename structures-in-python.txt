@@ -1,0 +1,33 @@
+Models:
+
+A model is the single, definitive source of information about your data. It contains the essential fields and behaviors of the data you’re storing. Generally, each model maps to a single database table.
+
+Each model is a python class that subclasses django.db.models.Model
+Each attribute of a model represents a database field
+
+class Person(models.Model)
+	first_name=models.CharField(max_length=30)
+	last_name=models.CharField(max_length=30)
+
+Now you must go into settings.py and changing the Installed Apps and adding in the name of the model that contains models.py
+
+
+Migrations:
+Migrations are Django’s way of propagating changes you make to your models (adding a field, deleting a model, etc.) into your database schema. They’re designed to be mostly automatic, but you’ll need to know when to make migrations, when to run them, and the common problems you might run into.
+
+Views:
+A view function simply takes an HTTP request and returns a Web response. This  response can be HTML doc or a 404 error etc.
+
+
+Commands
+
+Migrate- responsible for applying an unapplying migrations
+makemigrations-creates new migrations based on the changes youve made to your mode
+sqlmigrate- displays the SQL statements for a migration
+showmigrations- lists the migrations of a project
+
+
+
+Generic Views:
+
+Whenever you have list and you have to get information fromt eh list for example a website with albums and just information about the albums or names of blog posts and then the blogs themselve

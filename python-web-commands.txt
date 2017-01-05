@@ -21,6 +21,7 @@ In settings.py you add your apps, so we added webapp under Installed Apps
 
 The urls.py file checks whether the url patterns are there and checked whether the url had admin/ or webapp/ if it doesnt it returns a 404
 
+django-admin startproject mysite- creates a mysite project directory with a mysite python package with settings.py, urls.py and wsgi.py
 
 Process:
 From urls.py
@@ -97,7 +98,6 @@ The dictionary is a type of data structure in python which can be defined using 
 The following is an example of a dictionary:  {'Jack':[15,'blonde'],'Bob':[22, 'brown'],'Alice':[12,'black'],'Kevin':[17,'red']}
 
 We must also edit the urls.py file, which we do doing the following:
-
 url(r'^contact/$',views.contact,name="contact")
 
 We must also go into the urls.py in the mysite directory because the following line: 
@@ -112,3 +112,11 @@ We must also go into the urls.py in the mysite directory because the following l
 
  In order to install the app we must go to mysite/mysite/settings.py
 
+
+3 major steps in making migrations:
+python manage.py makemigrations 
+python manage.py sqlmigrate b log 0001 - tells you the SQL code for the migration that is being made
+python manage.py migrate
+
+localhost/admin will give you a login page in order to for you to sign in you have to write 
+python manage.py createsuperuser

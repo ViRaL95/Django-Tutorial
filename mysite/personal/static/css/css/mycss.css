@@ -1,0 +1,14 @@
+html,body {
+height:100%;
+}
+
+.avatar{
+	font-family: 'Kumar One';
+}
+.name-title-container{
+	max-height:35px;
+}
+.name,.title{
+	font-family: 'Kumar One';
+
+}

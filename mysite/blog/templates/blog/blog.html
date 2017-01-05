@@ -1,0 +1,18 @@
+{% extends "personal/header.html" %}
+
+{% block content %}
+	<table class="table table-bordered">
+		<thead>
+			<th style=width:"30%">Date</th>
+			<th style=width:"50%">Title</th>
+		</thead>	
+	{% for post in object_list %}
+		<tr>
+		<h5>
+			<td>{{ post.date|date:"Y-m-d"}}</td>
+			<td><a href="/blog/{{post.id}}">{{post.title}}</a></td>
+		</h5>
+		</tr>
+	{% endfor %}
+	</table>
+{% endblock %}
