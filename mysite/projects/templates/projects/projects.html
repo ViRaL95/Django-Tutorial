@@ -1,0 +1,68 @@
+
+{% extends "personal/header.html" %}
+{% load staticfiles %}
+{% block content %}
+<div class="projects">
+	<div class="project">
+		<div class="project-pic">	
+			<img src="{% static 'personal/img/viral.jpg' %}"/>
+		</div>
+		<div class="project-info">
+			<h6>Built a Personal Blog/Portfolio using Python in a Django Environment, Javascript, Jquery, sqlLite3,Jinja Templating Language</h6>
+		</div>
+		<div class="githublink" style="display:none">
+			<a href="https://github.com/ViRaL95/Django-Tutorial"><img style="float:left" src="{% static 'personal/img/github-portfolio.jpg' %}"></a>
+			<a style="float:right"href="#">Website Link</a>
+		</div>	
+	</div>
+	<div class="project">
+		<div class="project-pic">	
+			<img src="{% static 'personal/img/pills.png' %}"/>
+		</div>
+		<div class="project-info">
+			<h6>Medical Management Website using HTML, CSS, PHP, JQuery, Angular.js, MySQL, Bootstrap.</h6>
+		</div>
+		<div class="githublink" style="display:none">
+			<a href="https://github.com/ViRaL95/MedCompany"><img style="float:left" src="{% static 'personal/img/github-portfolio.jpg' %}"></a>
+			<a style="float:right"href="http://www.viralmedcompany.com">Website Link</a>
+		</div>	
+	</div>
+	<div class="project">
+		<div class="project-pic">
+			<img src="{%static 'personal/img/seawolves.jpg' %}"/>
+		</div>
+		<div class="project-info">
+			<h6>Built the backend of a scoreboard which updates live Stony Brook SeaWolves Games using HTML, CSS, Javascript, YQL</h6>
+		</div>
+		<div class="githublink" style="display:none">
+			<a href="https://github.com/ViRaL95/TheStatesman"><img style="float:left" src="{% static 'personal/img/github-portfolio.jpg' %}"></a>
+			<a style="float:right"href="http://www.sbstatesman.com/category/sports/">Website Link</a>
+		</div>	
+	</div>		
+	<div class="project">
+		<div class="project-pic">
+			<img src="{%static 'personal/img/space.jpg' %}"/>
+		</div>
+		<div class="project-info">
+			<h6>The first Website I ever made, which showcased some of the Electrical Engineering Projects I created using HTML, CSS</h6>
+
+		</div>
+		<div class="githublink" style="display:none">
+			<a href="https://github.com/ViRaL95/PersonalWebsite"><img style="float:left" src="{% static 'personal/img/github-portfolio.jpg' %}"></a>
+			<a style="float:right"href="http://www.varun-rao.net">Website Link</a>
+		</div>	
+	</div>
+	<div class="project">
+		<div class="project-pic">
+			<img src="{%static 'personal/img/googlesheets-excel.png'%}"/>
+		</div>
+		<div class="project-info">
+			<h6>Built a Command Line Interface application which retrieves several Google Sheets, meshes them together and creates an Excel SpreadSheet using Python, Google Sheets API</h6>
+		</div>
+		<div class="githublink" style="display:none">
+			<a href="https://github.com/ViRaL95/Python/tree/master/GoogleSheets-Excel"><img style="float:left" src="{% static 'personal/img/github-portfolio.jpg' %}"></a>
+		</div>			
+	</div>
+	
+</div>
+{% endblock %}

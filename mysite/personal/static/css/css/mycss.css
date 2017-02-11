@@ -1,28 +1,331 @@
 html,body {
 height:100%;
+background: #870000; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #870000 , #190A05); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #870000 , #190A05); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+width:100%;
+}
+/* PARENT CONTAINER */
+.overflow{
+  height:100%;
+  width:100%;
+  overflow: auto;
+}
+/* NAVBAR */
+nav{
+  background-color: black;
+  height:50px;
+  font-family: 'Londrina Solid';
+
+}
+nav ul{
+  margin:0; /* Margin 0 on the ul tag removes space from the top of the nav bar */
+  padding:0;
+}
+nav ul li{
+  color:white;
+  font-family:'Londrina Solid';
+  list-style: none;
+}
+nav ul li a{
+  text-decoration: none; /* GETS RID OF THE UNDELRINE FOR THE LINKS */
+  float:left;
+  padding:10px 20px; /* PROVIDES SPACING BETWEEN ELEMENTS ON THE NAV*/
 }
 
-.avatar{
-	font-family: 'Kumar One';
-}
-.name-title-container{
-	max-height:35px;
-}
-.name,.title{
-	font-family: 'Kumar One';
-
-}
-.table-bordered{
-	border-radius:25px;
-	border-style:solid;
-	border-color:white;
-	background-color: black;
-}
-#aboutme-img, #title{
-	float:left;
+/* WEBSITE TITLE */
+.website-title{
+  font-family:'Londrina Solid';
+  font-size: 35px;  
+  color:white;
+  top:0;
 }
 
+
+/*  DROP  */
 .drop-target{
 width:80px;
-transform:translateX(5px);
 }
+.name,.title{
+  font-family:'Londrina Solid';
+}
+
+/*  HOMEPAGE CONTENT */
+
+.MetroHack-title{
+  font-family:'Londrina Solid';
+  color:white;
+  font-size: 30px;
+}
+
+#MetroHacks{
+  width:200px;
+  height:400px;
+  position:relative;
+  display:inline-block;
+}
+#MetroHacks-dropdown p{
+color:black;
+
+}
+#MetroHacks-logo{
+  position:absolute;
+  top:0;
+  height:50%;
+}
+
+#MetroHacks-dropdown{
+  display:none;
+  border-color:black;
+  border-style: solid;
+  background-color: white;
+  position: absolute;
+  bottom:0;
+  height:50%;
+  width:100%;
+}
+/*INSPIRATIONAL LEADERS CONTENT*/
+.inspirational-leaders{
+  width:180px;
+  background-color: white;
+  float: right;
+  position: relative;
+  top:0;
+  height: 100%;
+}
+.inspirational-leaders img{
+  display: block; /* Position the images so that they each must take up one line */
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+
+/* PROJECT CONTENT */
+ .project{
+display:inline-block;
+width:120px;
+height:300px;
+position:relative;
+float:left;
+margin:10px;
+padding-right:10px;
+padding-top:10px;
+text-align: center;
+}
+.project-pic{
+  top:0;
+  position: absolute;
+  width:100%;
+  height:40%;
+}
+.project-info{
+  position:absolute;
+  top:120px;
+  width:100%;
+  font-family: 'Londrina Solid';
+  font-size:10px;
+  color:black;
+  background-color: white;
+  height:40%;
+}
+
+.githublink{
+  width:100%;
+  position: absolute;
+  background-color: Brown;
+  bottom:0;
+  height:20%;
+  font-family:'Londrina Solid';
+}
+/*  BLOG CONTENT */
+.blog-urls{
+  display:inline-block;
+  position:relative;
+  margin:10px;
+  height:400px;
+  width:202px;
+  font-family:'Londrina Solid';
+
+}
+.blog-image{
+border-style: solid;
+border-color: black;
+  height:50%;
+  position:absolute;
+  top:0;
+}
+.blog-info{
+border-style: solid;
+border-color: black;
+background-color: #FFFFFF;
+position:absolute;
+bottom:0;
+height:50%;
+width:100%;
+
+}
+.blog-title{
+  text-align: center;
+}
+
+
+/* POST CONTENT */
+.post{
+  margin-top:50px;
+  position: relative;
+}
+.post-left-bar{
+  height: 100%;
+  position: absolute;
+  left: 0;
+  width:50px;
+  background-color: black;
+  border-bottom-color:white;
+}
+.post-right-bar{
+  height: 100%;
+  position: absolute;
+  right:0;
+  width:50px;
+  background-color: black;
+  border-bottom-color:white;
+}
+.post-title{
+  font-family:'Londrina Solid';
+  font-size: 30px;  
+}
+.post-body{
+font-family:'Londrina Solid';
+font-size: 20px;  
+}
+.title-line{
+  background-color:black;
+  display: block;
+    height: 2px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0; 
+}
+
+
+
+/*CONTACT ME FORM CONTENT*/
+.contact-me{
+position: relative;
+background-color: black;
+width:100%;
+overflow-x:hidden;
+overflow-y:hidden;
+height:345px;
+}
+
+.contact-me button{
+  float:right;
+}
+#contact-title{
+  width:100%;
+  text-align: center;
+  font-family:'Londrina Solid';
+  color:white;
+  font-size:40px;
+  height:65%;
+}
+#message{
+  font-family:'Londrina Solid';
+  color:white;
+  width:60%;
+  float:right;
+  height:80%;
+}
+#name, #email, #select{
+  float:left;
+  font-size:10px;
+  width:40%;
+  font-family:'Londrina Solid';
+  color:white;
+  height:25%;
+}
+#name input, #email input, #select input, #message textarea, #contact{
+  color:black;
+}
+
+#message input{
+  height:100%;
+}
+
+.asterick{
+  color:red;
+}
+#error-message{
+  color:red;
+  font-family: 'Londrina Solid';
+  font-size: 20px;
+}
+
+/*  SOCIAL NETWORK CONTENT*/
+.social-networks{
+  background-color: Navy;
+  width:100%;
+  position: relative;
+  height:65px;
+  overflow-x:hidden;
+}
+
+
+.social-networks div{
+  width:25%;
+  float:left;
+}
+
+/* CONTENT OF BLOG POST */
+@media (max-width: 768px){
+  .post-body{
+      font-size: 15px;
+
+  }
+}
+/*  CONTENT OF BLOG POST  */
+@media (max-width: 621px){
+  .post-body{
+    font-size: 12px;
+  }
+}
+@media (max-width: 510px){
+  .post-body{
+    font-size:10px;
+  }
+}
+/* CONTACT  ME FORM CONTENT*/
+@media (max-width: 700px){
+#name, #email, #select,#message{
+  display: block;
+  width: 100%;
+
+}
+.contact-me{
+  height:450px;
+}
+#contact-title{
+  font-size: 25px;
+}
+}
+/* CONRTENT OF THE POST   */
+@media (max-width: 421px){
+.post-content{
+  overflow-x:auto;
+}
+}
+@media (max-width: 330px){
+#contact-title{
+  font-size: 20px;
+}
+.website-title{
+  font-size: 30px;
+}
+#message textarea{
+  width:20em;
+}
+}
+
+
+

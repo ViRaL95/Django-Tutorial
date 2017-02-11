@@ -2,85 +2,147 @@
 <html lang="en">
 
 <head>
-	<title>Harrison Ksley</title>
+	<title>A Vi_ral Blog</title>
 	<meta charset="utf-8" />
 	{% load staticfiles %}
 	<link rel='stylesheet' href="{% static 'css/bootstrap.min.css' %}" type="text/css"/>
 	<link rel='stylesheet' href="{% static 'css/css/drop-theme-arrows.css' %}" type="text/css"/>
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Kumar+One">
-    <link rel="stylesheet" type="text/css" href="{%static 'css/css/mycss.css' %}"/>      
-    <!-- <link href="/pace/themes/pace-theme-barber-shop.css" rel="stylesheet" /> !-->
-
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Kumar+One"/>
+	<link rel="stylesheet" type="text/css"  href="{%static 'vex/dist/css/vex.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{%static 'vex/dist/css/vex-theme-os.css' %}"/>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'/>
+	<link rel="stylesheet" type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Londrina+Solid"/>
+	<link rel="stylesheet" type="text/css"  href="{% static 'vex/dist/css/vex.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'vex/dist/css/vex-theme-os.css' %}"/>	
+    <link rel="stylesheet" type="text/css" href="{% static 'css/css/mycss.css' %}"/>   
 	<script type="text/javascript" src="{% static 'js/tether.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/drop.min.js' %}"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="{% static 'js/themes.js' %}"></script>
+	<script type="text/javascript" src="{%static 'vex/dist/js/vex.combined.js' %}"></script>
+	<script type="text/javascript"> vex.defaultOptions.className = 'vex-theme-os'</script>
+	<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+	<!-- async downloads the javascript file during HTML parsing and will pause the HTML parses to exeucte it when it has finished downloading-->
+	<!--  defer downloads the file during HTML parsing and will only execute it after the parser has completed. Defer scripts guarantees to execute in the order they appear in the document  -->
 	<!-- <script type="text/javascript" src="{% static 'js/pace.js' %}"></script> !-->
 	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+	<meta name="google-signin-client_id" content="463158449499-o0ca789mjj5m0cueejr2d5j1kuflal7b.apps.googleusercontent.com">
+
 </head>
 
-<body class="body" style="background-color:#f6f6f6">
-	<div class="container-fluid" style="min-height:95%; ">
-		<div class="row">
-		<div class="col-sm-10">
-				  <br>
-				  <center>
-				  <h3>A Vi_ral Blog</h3>
-				  </center>
-		</div>
-			  <br>
-		<div class="col-sm-2">
-				  <center>
-					  <div class="drop-target">
+<body>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=461235354000787";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
+	<div id="overflow">	
+			<div>
+				<nav>
+					<ul>
+						<li>
+							<a href="/">
+								HOMEPAGE
+							</a>
+						</li>
+						<li>
+							<a href="/projects">
+								PROJECTS
+							</a>	
+						</li>
+						<li>
+							<a href="/blog">
+								BLOG
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+					
+			<center>
+				<div class="website-title">
+					<p>A VI_RAL PRODUCTION</p>
+				</div>
+				  <div class="drop-target">
 						<img src="{% static 'personal/img/profile.jpg' %}" class="responsive-img" style='max-height:100px; width:80px' alt="face"/>
-					  </div>
-					  <div id="hidden-div" style="display:none">
-					  	<div class="avatar">
-					  		<img src="{% static 'personal/img/profile.jpg' %}" class="responsive-img" style='max-height:100px; max-width:50px' alt="face"/>
-					  	</div>
+				  </div>
+				  <div id="hidden-div" style="display:none">
 					  	<div class="name">
 					  		Varun Rao
 					  	</div>
 					  	<div class="title">
-					  	Traveller <br> Developer As a Hobbyist
+					  	Traveller <br> and <br> Developer<br>
 					  	</div>	
-					  </div>	
-				  </center>
-			  </div>
-		</div>
-		<hr>
-		<div class="row">
-		  <div class="col-sm-2">
-		  <br>
+				  </div>	
+			</center>
+		<!-- Contains the content of the page -->
+				   {% block content %}
+				   {% endblock %}
 
-		  <br>
-		   <!-- Great, til you resize. -->
-			<!--<div class="well bs-sidebar affix" id="sidebar" style="background-color:#fff">-->
-			<div class="well bs-sidebar" id="sidebar" style="background-color:#fff">
-			  <ul class="nav nav-pills nav-stacked">
-				<li><a href='/'>Home<span class="glyphicon glyphicon-home"></span></a></li>
-				<li><a href='/blog/'>Blog<span class="glyphicon glyphicon-book"></span></a></li>
-				<li><a style="color:black" href='/contact/'>Contact<span class="glyphicon glyphicon-phone"></span></a></li>
-			  </ul>
-			</div> <!--well bs-sidebar affix-->
-		  </div> <!--col-sm-2-->
-		  <div class="col-sm-10">
-		  
-			<div class='container-fluid'>
-			<br><br>
-			   {% block content %}
-			   {% endblock %}	
+
+			<div  class="contact-me">
+				<form id="contact-info" type="POST">{% csrf_token %}
+					<div id="contact-title">
+						<p>
+							WANT TO GET IN TOUCH WITH ME?
+						</p>
+					</div>
+					<div id="message">
+						<h4>Write a Message:<span class="asterick" style="display:none">*</span> </h4> <textarea rows="5" id="message-info"name="messagetome"cols="50" placeholder="Enter your message, and contact info here..."></textarea>
+					</div>	
+					<div id="name">
+						<h4>Enter Your Name:</h4><span class="asterick" style="display:none">*</span> <input type="text" id="name-info" name="name"placeholder="Enter Your Name"></input>
+					</div>
+					<div id="email">
+						<h4>Enter Your Email:</h4><span class="asterick" style="display:none">*</span> <input type="text" id="email-info" name="email"placeholder="Enter Your Email"></input>
+					</div>
+					<div id="select">
+						<h4>Reason For Contact:</h4><span class="asterick" style="display:none">*</span> 
+						<select id="contact">
+							<option value="Build-Your-Website">Build Your Website</option>
+							<option value="Interested-in-Hiring-Me">Interested in Hiring Me</option>
+							<option value="Other">Other</option>
+						</select>
+					</div>	
+					<h4><span id="error-message" style="display:none">PLEASE ENTER ALL INFORMATION</span></h4>
+					<button type="button" id="submit" class="btn btn-primary">Submit</button>
+				</form>	
 			</div>
-		  </div>
-		</div> 
-	</div>
-	<footer>
-		<div class="container-fluid" style='margin-left:15px'>
-			<p><a href="#" target="blank">Contact</a> | <a href="#" target="blank">LinkedIn</a> | <a href="https://github.com/ViRaL95" target="blank">GitHub</a> | <a href="https://linkedin.com/varunrao95" target="blank">Linkedin</a></p>
-		</div>
-	</footer>	
+			<div class="social-networks">
+				<center>
+					<div>
+						<a href="https://www.instagram.com/vi_ral/"><img src="{% static 'personal/img/instagram.png'%}"/></a>
+					</div>
+				</center>
+				<center>
+					<div>
+						<a href="https://www.facebook.com/Vro0m"><img src="{% static 'personal/img/facebook.png'%}"/></a>
+					</div>
+				</center>
+				<center>
+					<div>
+						<a href="https://www.linkedin.com/in/varunrao95"><img src="{% static 'personal/img/linkedin.png'%}"/></a>
+					</div>
+				</center>
+				<center>
+					<div>
+						<a href="https://github.com/ViRaL95"><img src="{% static 'personal/img/github.png'%}"/></a>
 
+					</div>
+				</center>
+			</div>
+	</div>	
 
+		<script type="text/javascript" src="{% static 'js/themes.js' %}"></script>			
+		<script type="text/javascript" src="{% static 'js/blog-images.js'%}"></script>
+		<!--
+			NOTICE BELOW THAT BY CLICKING ON THIS BUTTON THE ONLOADMETHOD KNOWN AS
+			CHECKAUTH
+		-->
+		<script type="text/javascript" src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+		<script type="text/javascript" src="{%static 'js/google-calendar.js'%}"></script>
 </body>
-
 </html>

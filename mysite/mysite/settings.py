@@ -33,7 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'personal',
     'blog',
-    'webapp',
+    'projects',
+    'emailme',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

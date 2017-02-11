@@ -1,19 +1,20 @@
 
 {% extends "personal/header.html" %}
-
+{% load staticfiles %}
 {% block content %}
-	<table class="table table-bordered" >
-		<thead>
-			<th style="width:30%; color:white">Date</th>
-			<th style="width:50%; color:white">Title</th>
-		</thead>	
+<div class="blogs">
 	{% for post in object_list %}
-		<tr>
-		<h5>
-			<td style="color:white">{{ post.date|date:"Y-m-d"}}</td>
-			<td style="color:white"><a href="/blog/{{post.id}}">{{post.title}}</a></td>
-		</h5>
-		</tr>
+		<div class="blog-urls">	
+			<div class="blog-image">
+			</div>
+			<div class="blog-info">
+				<time>{{ post.date|date:"m-d-Y"}}</time>
+				<h3>
+				<a href="/blog/{{post.id}}" class="blog-title">{{post.title}}</a>
+				</h3>
+				<a href="/blog/{{post.id}}">Read More...</a>				
+			</div>
+		</div>	
 	{% endfor %}
-	</table>
+</div>	
 {% endblock %}

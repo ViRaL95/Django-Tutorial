@@ -1,5 +1,20 @@
+
 {% extends "personal/header.html" %}
 {% block content %}
-<p> Welcome to my website. Im a programmer </p>
-{% include "personal/includes/htmlsnippet.html" %}
+{% load staticfiles %}
+<div class="homepage">
+	<h3 class="MetroHack-title">MetroHacks Event</h3>
+	<div id="MetroHacks">
+		<div id="MetroHacks-logo">	
+			<img src="{% static 'personal/img/MetroHacks.png' %}"></img>
+      	</div>
+      	<div id="MetroHacks-dropdown">
+      		<center>
+	      		<p><h4>MetroHacks is New England's premier Hackathon Event for high school students from age 13-18! Come join us on May 21, 2017! 
+	      		</h4></p>
+	      			<button id="authorize-button" type="button" class="btn btn-primary">Add to Google Calendar</button>
+      		</center>
+      	</div>
+    </div>
+</div>     
 {% endblock %}

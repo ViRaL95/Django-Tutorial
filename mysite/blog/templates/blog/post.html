@@ -1,7 +1,23 @@
 {% extends "personal/header.html" %}
 
 {% block content %}
-<h3>{{post.title}}</h3>
-<h6>on{{post.date}}</h6>
-{{post.body|safe|linebreaks}}
+<div class="post">
+	<div class="post-left-bar"></div>
+
+	<div class="post-right-bar"></div>
+
+		<div class="post-content" style="background-color:white; color:black">
+			<center>		
+				<h3 class="post-title">{{post.title}}</h3>
+				<hr class="title-line"/>
+				<h6>on {{post.date}}  <span><p class="author">by: Varun Rao </p></span></h6>
+				<div class="post-body">
+				{{post.body|safe|linebreaks}}
+				</div>
+				<div class="fb-comments" data-href="www.viralblogger.site" data-width="80"data-numposts="10"></div>
+			</center>
+		</div>
+</div>
 {% endblock %}
+
+
