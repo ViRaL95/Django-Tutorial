@@ -51,6 +51,15 @@ $(".project:eq(4)").mouseleave(function(){
 	$(".githublink:eq(4)").fadeOut("fast","linear");
 
 })
+$(".project:eq(5)").mouseover(function(){
+	$(".githublink:eq(5)").fadeIn("fast","linear");
+
+})
+
+$(".project:eq(5)").mouseleave(function(){
+	$(".githublink:eq(5)").fadeOut("fast","linear");
+
+})
 
 $(".leader:eq(0)").mouseover(function(){
 	$(".leader-info").fadeIn("fast","linear");
